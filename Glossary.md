@@ -110,3 +110,9 @@ file Glossary.md
 mount /home/ackermau /home/woodriir/241
 ```
 
+**xxd** - Shows hex or binary depending on file and directory
+```
+xxd blah
+```
+
+
