@@ -1,0 +1,15 @@
+This text file contains my (Austin Ackermran) answer to question 14 of the CIS 241 midterm.
+
+sed -E 's/""/"\n"/g' /home/woodriir/241/midterm.csv | sed -E '1d' | sort | cut -d, -f1,2,4 | sed -E '/"Lilianna"/d' | sed -E 's/"//g' | md5sum
+
+Command 1 - used sed regular expression (-E flag) with the substitution flag 's' with delimitors '/' to change two quotes thogether '""' to a guote a new line and another quote '"\n"' then the global flag to go through the whole file. I used the substitute global template (('s///g') I just came up with that name) because I feel its the easiest thing to use when replacing certain strings or characters.
+
+Command 2 - sed regular expression (-E flag) with the 'd' flag deleting lines 1 (header line). I almost used the same command as command one but did First Name and blank but I feel using the delete lines then the first line command with sed is probably better for a general command.
+
+Command 3 - general sort command to sort the file by last name then first name since that is how the columns are ordered. Since the columns in everyline was already sorted to last name then first name a simple sort command was enough to sort the whole file.
+
+Command 4 - cut command with -d flag for delimitors ',' then the -f flag for fields 1,2, and 4 to remain in the file. cut is really easy to use just use -d and anything that separates (ie. ,/|.-_) and what field you want to keep with -f flag or what you want to remove when putting --complement at the end and before the file name. 
+
+Command 5 - used sed regular expression (-E flag) with 'd' flag to delete all lines containing "Lilianna". similar to command two but using // as delimitors you can delete any line containig what is between the two slashes.
+
+Command 6 - used sed regular expression (-E flag) with substitute global template ('s///g') with a sinlg quote " and blank to get rid of all quotes in the file. another simple use of the s and g flag to get rid of all quotes. I'm starting to really get the hang of this and it is a lot of fun.
