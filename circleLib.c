@@ -1,9 +1,12 @@
+#include "circleLib.h"
 #include <math.h>
 
+const double PI = 3.14159;
+
 double calcPerim(double radius) {
-	return (2 * M_PI * radius);
+	return (2 * PI * radius);
 }
 
 double calcArea(double radius) {
-	return (M_PI * radius)*(M_PI * radius);
+	return (PI * radius)*(PI * radius);
 }

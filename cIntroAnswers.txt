@@ -1,0 +1,17 @@
+5. time stamps - a.out = 19:13
+   		 main.o = 19:12
+		 circleLib.o = 19:11
+
+6. time stamps - a.out = 20:49
+		 main.o = 19:12
+		 circleLib.o = 20:49
+
+	a.out and circlLib.o timstamps changed because we modifided only circlLib.o and compiled to make only a new 
+a.out, leaving main.o alone and that is why it's time stamp didn't change
+
+7. time stamps - a.out = 21:19 - changed, new compiled version w/ newLib files
+		 main.o = 19:12 - did not change
+		 main.c = 21:18 - changed, included newLib files
+		 cicleLib.o = 20:49 - all cicleLib files time stamps did not change
+		 newLib.c = 21:14
+		 newLib.o = 21:15
