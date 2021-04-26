@@ -38,7 +38,8 @@ void one(Student* a){
 void two(Student* a, Student* b){
 	a->first_name = get_first_name(b);
 	a->last_name = get_last_name(b);
-	a->g	
+	a->g_number = get_g_number(b);
+	
 }
 
 /**
