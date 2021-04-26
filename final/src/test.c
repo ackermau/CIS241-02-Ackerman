@@ -39,7 +39,7 @@ void two(Student* a, Student* b){
 	a->first_name = get_first_name(b);
 	a->last_name = get_last_name(b);
 	a->g_number = get_g_number(b);
-	
+	a->gpa = get_gpa(b);	
 }
 
 /**
@@ -48,6 +48,10 @@ void two(Student* a, Student* b){
  */
 
 void three(Student a, Student* b){
+	b->first_name = a.first_name;
+	b->last_name = a.last_name;
+	b->g_number = a.g_number;
+	b->gpa = a.gpa;
 }
 
 /**
@@ -61,6 +65,11 @@ void three(Student a, Student* b){
  */
 Student four(){
 	Student a;
+	a.first_name = "T. Yoshisaur";
+	a.last_name = "Munchakoopas";
+	a.g_number = 1990;
+	a.gpa = 3.1;
+	a.roommate = &Mario;	
 	return a;
 }
 
@@ -73,7 +82,12 @@ Student four(){
  * Remember: C is pass by copy ONLY.
  */
 Student* five(){
-	return NULL;
+	Student* l = (Student*) malloc(sizeof(Student));
+	l->first_name = "Luigi";
+	l->last_name = "Mario";
+	l->g_number = 2;
+	l->gpa = 3.54;
+	return l;
 }
 
 /**
@@ -87,7 +101,12 @@ Student* five(){
  * 3.54    (gpa [we know he's the smart one])
  */
 Student* six(){
-	return NULL;
+	Student* s = (Student*) malloc(sizeof(Student) * 10);
+	s[3].first_name = "Luigi";
+	s[3].last_name = "Mario";
+	s[3].g_number = 2;
+	s[3].gpa = 3.54;
+	return s;
 }
 
 /**
@@ -103,7 +122,11 @@ Student* six(){
  * 3.54    (gpa [we know he's the smart one])
  */
 void seven(Student** students){
-	
+	students = (Student**) malloc(sizeof(Student*) * 10);
+	students[9]->first_name = "Luigi";
+	students[9]->last_name = "Mario";
+	students[9]->g_number = 2;
+	students[9]->gpa = 3.54;
 }
 
 /**
@@ -113,6 +136,9 @@ void seven(Student** students){
  * -b + sqrt(b^2 - 4ac) / (2a)
  */
 double quadratic(double a, double b, double c){
+	double quad;
+	quad = -b + sqrt(b*b - 4*a*c) / (2*a);
+	return quad;
 }
 
 /**
@@ -129,4 +155,5 @@ double quadratic(double a, double b, double c){
  */
 #include <stdio.h>
 void capitalize(char* str, size_t len){
+	
 }
